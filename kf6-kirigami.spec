@@ -30,6 +30,7 @@ BuildRequires: cmake(Qt6Quick)
 BuildRequires: cmake(Qt6Svg)
 BuildRequires: cmake(Qt6QuickControls2)
 BuildRequires: cmake(Qt6Concurrent)
+BuildRequires: cmake(Qt6ShaderTools)
 Requires: %{libname} = %{EVRD}
 
 %description

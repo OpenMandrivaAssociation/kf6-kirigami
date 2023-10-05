@@ -1,6 +1,6 @@
 %define libname %mklibname KF6Kirigami
 %define devname %mklibname KF6Kirigami -d
-%define git 20230927
+%define git 20231005
 
 Name: kf6-kirigami
 Version: 5.240.0
@@ -77,7 +77,6 @@ QtQuick plugins to build user interfaces following the KDE Human Interface Guide
 %files -n %{devname}
 %{_includedir}/KF6/Kirigami2
 %{_libdir}/cmake/KF6Kirigami2
-%{_qtdir}/mkspecs/modules/qt_Kirigami2.pri
 %{_qtdir}/doc/KF6Kirigami2.*
 
 %files -n %{libname}

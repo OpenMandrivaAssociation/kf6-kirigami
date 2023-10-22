@@ -1,6 +1,6 @@
 %define libname %mklibname KF6Kirigami
 %define devname %mklibname KF6Kirigami -d
-%define git 20231014
+%define git 20231022
 
 Name: kf6-kirigami
 Version: 5.240.0

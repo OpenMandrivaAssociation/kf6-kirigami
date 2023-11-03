@@ -1,6 +1,8 @@
-%define libname %mklibname KF6Kirigami
-%define devname %mklibname KF6Kirigami -d
-%define git 20231022
+%define oldlibname %mklibname KF6Kirigami
+%define olddevname %mklibname KF6Kirigami -d
+%define libname %mklibname KirigamiPlatform
+%define devname %mklibname KirigamiPlatform -d
+%define git 20231103
 
 Name: kf6-kirigami
 Version: 5.240.0
@@ -40,6 +42,7 @@ QtQuick plugins to build user interfaces following the KDE Human Interface Guide
 Summary: QtQuick plugins to build user interfaces following the KDE Human Interface Guidelines
 Group: System/Libraries
 Requires: %{name} = %{EVRD}
+%rename %{oldlibname}
 
 %description -n %{libname}
 QtQuick plugins to build user interfaces following the KDE Human Interface Guidelines
@@ -48,6 +51,7 @@ QtQuick plugins to build user interfaces following the KDE Human Interface Guide
 Summary: Development files for %{name}
 Group: Development/C
 Requires: %{libname} = %{EVRD}
+%rename %{olddevname}
 
 %description -n %{devname}
 Development files (Headers etc.) for %{name}.
@@ -75,10 +79,11 @@ QtQuick plugins to build user interfaces following the KDE Human Interface Guide
 %{_datadir}/qlogging-categories6/kirigami.categories
 
 %files -n %{devname}
-%{_includedir}/KF6/Kirigami2
+%{_includedir}/KF6/Kirigami
 %{_libdir}/cmake/KF6Kirigami2
-%{_qtdir}/doc/KF6Kirigami2.*
+%{_libdir}/cmake/KF6KirigamiPlatform
+%{_qtdir}/doc/KF6KirigamiPlatform.*
 
 %files -n %{libname}
-%{_libdir}/libKF6Kirigami2.so*
+%{_libdir}/libKirigamiPlatform.so*
 %{_qtdir}/qml/org/kde/kirigami

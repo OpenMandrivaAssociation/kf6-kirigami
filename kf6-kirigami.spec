@@ -1,13 +1,19 @@
+%define stable %([ "$(echo %{version} |cut -d. -f2)" -ge 80 -o "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
+
 %define oldlibname %mklibname KF6Kirigami
 %define olddevname %mklibname KF6Kirigami -d
 %define libname %mklibname KirigamiPlatform
 %define devname %mklibname KirigamiPlatform -d
-%define git 20231103
+#define git 20231103
 
 Name: kf6-kirigami
-Version: 5.240.0
+Version: 5.245.0
 Release: %{?git:0.%{git}.}1
+%if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/kirigami/-/archive/master/kirigami-master.tar.bz2#/kirigami-%{git}.tar.bz2
+%else
+Source0: https://download.kde.org/%{stable}/frameworks/%{version}/kirigami-%{version}.tar.xz   
+%endif
 Summary: QtQuick plugins to build user interfaces following the KDE Human Interface Guidelines
 URL: https://invent.kde.org/frameworks/kirigami
 License: CC0-1.0 LGPL-2.0+ LGPL-2.1 LGPL-3.0

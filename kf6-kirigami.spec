@@ -9,7 +9,7 @@
 
 Name: kf6-kirigami
 Version: 6.1.0
-Release: %{?git:0.%{git}.}1
+Release: %{?git:0.%{git}.}2
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/kirigami/-/archive/master/kirigami-master.tar.bz2#/kirigami-%{git}.tar.bz2
 %else
@@ -50,6 +50,8 @@ QtQuick plugins to build user interfaces following the KDE Human Interface Guide
 Summary: QtQuick plugins to build user interfaces following the KDE Human Interface Guidelines
 Group: System/Libraries
 Requires: %{name} = %{EVRD}
+# %{_qtdir}/qml/org/kde/kirigami/AbstractApplicationWindow.qml
+Requires: qml(org.kde.desktop)
 %rename %{oldlibname}
 
 %description -n %{libname}

@@ -15,6 +15,7 @@ Source0: https://invent.kde.org/frameworks/kirigami/-/archive/master/kirigami-ma
 %else
 Source0: https://download.kde.org/%{stable}/frameworks/%{major}/kirigami-%{version}.tar.xz   
 %endif
+Patch0: https://invent.kde.org/frameworks/kirigami/-/commit/722dc268ccc8921552c027d67d5b11d1d5307ec9.patch
 Summary: QtQuick plugins to build user interfaces following the KDE Human Interface Guidelines
 URL: https://invent.kde.org/frameworks/kirigami
 License: CC0-1.0 LGPL-2.0+ LGPL-2.1 LGPL-3.0

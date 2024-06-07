@@ -8,7 +8,7 @@
 #define git 20240217
 
 Name: kf6-kirigami
-Version: 6.2.1
+Version: 6.3.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/kirigami/-/archive/master/kirigami-master.tar.bz2#/kirigami-%{git}.tar.bz2
@@ -42,6 +42,9 @@ BuildRequires: cmake(Qt6QuickControls2)
 BuildRequires: cmake(Qt6Concurrent)
 BuildRequires: cmake(Qt6ShaderTools)
 Requires: %{libname} = %{EVRD}
+BuildSystem: cmake
+BuildOption: -DBUILD_QCH:BOOL=ON
+BuildOption: -DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %description
 QtQuick plugins to build user interfaces following the KDE Human Interface Guidelines
@@ -68,22 +71,6 @@ Development files (Headers etc.) for %{name}.
 
 QtQuick plugins to build user interfaces following the KDE Human Interface Guidelines
 
-%prep
-%autosetup -p1 -n kirigami-%{?git:master}%{!?git:%{version}}
-%cmake \
-	-DBUILD_QCH:BOOL=ON \
-	-DBUILD_WITH_QT6:BOOL=ON \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-
-%find_lang %{name} --all-name --with-qt --with-html
-
 %files -f %{name}.lang
 %{_datadir}/kdevappwizard/templates/kirigami6.tar.bz2
 %{_datadir}/qlogging-categories6/kirigami.categories
@@ -96,5 +83,8 @@ QtQuick plugins to build user interfaces following the KDE Human Interface Guide
 %files -n %{libname}
 %{_libdir}/libKirigami.so*
 %{_libdir}/libKirigamiDelegates.so*
+%{_libdir}/libKirigamiDialogs.so*
+%{_libdir}/libKirigamiLayouts.so*
 %{_libdir}/libKirigamiPlatform.so*
+%{_libdir}/libKirigamiPrimitives.so*
 %{_qtdir}/qml/org/kde/kirigami

@@ -9,7 +9,7 @@
 
 Name: kf6-kirigami
 Version: 6.14.0
-Release: %{?git:0.%{git}.}1
+Release: %{?git:0.%{git}.}2
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/kirigami/-/archive/master/kirigami-master.tar.bz2#/kirigami-%{git}.tar.bz2
 %else
@@ -45,6 +45,12 @@ Requires: %{libname} = %{EVRD}
 BuildSystem: cmake
 BuildOption: -DBUILD_QCH:BOOL=ON
 BuildOption: -DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+
+%patchlist
+https://invent.kde.org/frameworks/kirigami/-/commit/d373ee15e51a42a110309baed6c321126d5acfeb.patch
+https://invent.kde.org/frameworks/kirigami/-/commit/0b085580b3e4a8d6407a0cd35ee5a622226a1dfa.patch
+https://invent.kde.org/frameworks/kirigami/-/commit/54a92465b5ddcd55a5dfdd16c5215ad0769615fc.patch
+https://invent.kde.org/frameworks/kirigami/-/commit/e371f2ece21570342de9eb8a58e3b26f84380705.patch
 
 %description
 QtQuick plugins to build user interfaces following the KDE Human Interface Guidelines

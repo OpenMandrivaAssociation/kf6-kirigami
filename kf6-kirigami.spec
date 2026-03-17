@@ -8,7 +8,7 @@
 #define git 20240217
 
 Name: kf6-kirigami
-Version: 6.23.1
+Version: 6.24.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/kirigami/-/archive/master/kirigami-master.tar.bz2#/kirigami-%{git}.tar.bz2
@@ -83,6 +83,7 @@ QtQuick plugins to build user interfaces following the KDE Human Interface Guide
 
 %files -n %{libname}
 %{_libdir}/libKirigami.so*
+%{_libdir}/libKirigamiControls.so*
 %{_libdir}/libKirigamiDelegates.so*
 %{_libdir}/libKirigamiDialogs.so*
 %{_libdir}/libKirigamiLayouts.so*

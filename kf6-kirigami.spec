@@ -94,7 +94,6 @@ QtQuick plugins to build user interfaces following the KDE Human Interface Guide
 %{_libdir}/libKirigamiLayouts.so*
 %{_libdir}/libKirigamiLayoutsPrivate.so*
 %{_libdir}/libKirigamiPlatform.so*
-%{_libdir}/libKirigamiPolyfill.so*
 %{_libdir}/libKirigamiPrimitives.so*
 %{_libdir}/libKirigamiPrivate.so*
 %{_libdir}/libKirigamiTemplates.so*
